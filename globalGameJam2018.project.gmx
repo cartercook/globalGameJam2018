@@ -5,14 +5,38 @@
   </Configs>
   <NewExtensions/>
   <sounds name="sound"/>
-  <sprites name="sprites"/>
-  <backgrounds name="background"/>
+  <sprites name="sprites">
+    <sprite>sprites\spr_btn_play</sprite>
+    <sprite>sprites\spr_btn_heart</sprite>
+    <sprite>sprites\spr_btn_pink</sprite>
+    <sprite>sprites\spr_btn_yellow</sprite>
+    <sprite>sprites\spr_btn_x</sprite>
+    <sprite>sprites\spr_ico_mail</sprite>
+    <sprite>sprites\spr_light</sprite>
+    <sprite>sprites\spr_ticker</sprite>
+    <sprite>sprites\spr_logo</sprite>
+    <sprite>sprites\spr_popup</sprite>
+    <sprite>sprites\spr_selector</sprite>
+  </sprites>
+  <backgrounds name="background">
+    <background>background\bg_starbg</background>
+    <background>background\bg_controlpanel</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\draw_wave.gml</script>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_pixel</font>
+    <font>fonts\fnt_shumi</font>
+  </fonts>
+  <objects name="objects">
+    <object>objects\obj_logo</object>
+  </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\screen_startmenu</room>
+    <room>rooms\screen_controlpanel</room>
+    <room>rooms\screen_instructions</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

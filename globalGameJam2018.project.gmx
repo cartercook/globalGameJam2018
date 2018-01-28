@@ -10,6 +10,7 @@
     <sound>sound\snd_panchetta</sound>
     <sound>sound\snd_reznar</sound>
     <sound>sound\snd_robot</sound>
+    <sound>sound\snd_wota</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_btn_play</sprite>

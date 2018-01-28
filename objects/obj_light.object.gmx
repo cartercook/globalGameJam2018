@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0
+image_index = 1 // green
 </string>
           </argument>
         </arguments>
@@ -55,7 +56,15 @@ draw_set_halign(fa_center)
 draw_set_valign(fa_center)
 draw_set_colour(c_fuchsia)
 
-draw_text(x, y, "STAND BY")
+// draw remaining time
+seconds = audio_sound_length(global.tracks[0]) - audio_sound_get_track_position(global.tracks[0])
+minutes = floor(seconds/60)
+seconds -= minutes * 60
+milliseconds = floor((seconds - floor(seconds)) * 100)
+seconds = floor(seconds)
+
+draw_text(x, y, string(minutes) + ':' + string_format(seconds, 2, 0) + ':' + string_format(milliseconds, 2, 0))
+
 </string>
           </argument>
         </arguments>

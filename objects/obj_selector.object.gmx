@@ -29,26 +29,35 @@
 
 global.track = 0
 
-global.tracks[0] = snd_carcas
-global.tracks[1] = snd_michael
-global.tracks[2] = snd_panchetta
-global.tracks[3] = snd_reznar
-global.tracks[4] = snd_robot
+// full volume
+global.tracks[0] = audio_play_sound(snd_carcas, 10, false)
 
-audio_play_sound(global.tracks[0], 10, false)
-/*
-audio_play_sound(global.tracks[1], 10, false)
-audio_pause_sound(global.tracks[1])
+// silent
+global.tracks[1] = audio_play_sound(snd_michael, 10, false)
+audio_sound_gain(global.tracks[1], 0, 0)
 
-audio_play_sound(global.tracks[2], 10, false)
-audio_pause_sound(global.tracks[2])
+global.tracks[2] = audio_play_sound(snd_panchetta, 10, false)
+audio_sound_gain(global.tracks[2], 0, 0)
 
-audio_play_sound(global.tracks[3], 10, false)
-audio_pause_sound(global.tracks[3])
+global.tracks[3] = audio_play_sound(snd_reznar, 10, false)
+audio_sound_gain(global.tracks[3], 0, 0)
 
-audio_play_sound(global.tracks[4], 10, false)
-audio_pause_sound(global.tracks[4])
-*/
+global.tracks[4] = audio_play_sound(snd_robot, 10, false)
+audio_sound_gain(global.tracks[4], 0, 0)
+
+global.tracks[5] = audio_play_sound(snd_wota, 10, false)
+audio_sound_gain(global.tracks[5], 0, 0)
+
+// pause everything (wait for play button)
+audio_pause_all()
+
+//references to sound clip objects
+global.track_obj[0] = obj_carcas_wav
+global.track_obj[1] = obj_michael_wav
+global.track_obj[2] = obj_panchetta_wav
+global.track_obj[3] = obj_reznar_wav
+global.track_obj[4] = obj_robot_wav
+global.track_obj[5] = obj_wota_wav
 </string>
           </argument>
         </arguments>
@@ -73,11 +82,11 @@ audio_pause_sound(global.tracks[4])
             <kind>1</kind>
             <string>if keyboard_check_pressed(vk_down) and global.track &lt; 5 {
     scr_set_track(global.track+1)
-    scr_play()
 } else if keyboard_check_pressed(vk_up) and global.track &gt; 0 {
     scr_set_track(global.track-1)
-    scr_play()
 }
+
+y = global.track_obj[global.track].y
 </string>
           </argument>
         </arguments>

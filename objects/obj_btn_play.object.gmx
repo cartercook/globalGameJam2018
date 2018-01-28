@@ -54,19 +54,21 @@ playing = false
 if position_meeting(mouse_x, mouse_y, self) {
     // toggle playing
     if mouse_check_button_pressed(mb_left) {
-        playing = !playing
+        if playing {
+            audio_pause_all()
+            playing = false
+        } else {
+            audio_resume_all()
+            playing = true
+        }
     }
 
     // hover colour
-    if playing == false {
-        image_index = 1 // pink
-    } else {
-        image_index = 2 // grey
-    }
+    image_index = 1 // pink
 } else {
     // normal colour
-    if playing == true {
-        image_index = 2 //grey
+    if playing {
+        image_index = 1 //pink
     } else {
         image_index = 0 //yellow
     }

@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>time_fraction = audio_sound_get_track_position(global.tracks[0])/audio_sound_length(global.tracks[0])
+x = obj_carcas_wav.x + (obj_carcas_wav.sprite_width) * (time_fraction - 0.5)
+</string>
           </argument>
         </arguments>
       </action>

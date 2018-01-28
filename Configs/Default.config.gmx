@@ -211,7 +211,7 @@
     <option_changeresolution>false</option_changeresolution>
     <option_closeesc>true</option_closeesc>
     <option_colordepth>0</option_colordepth>
-    <option_display_name>GameMaker: Studio</option_display_name>
+    <option_display_name>Love is on the Air</option_display_name>
     <option_displayerrors>True</option_displayerrors>
     <option_ecma>0</option_ecma>
     <option_facebook_app_display_name></option_facebook_app_display_name>
@@ -233,7 +233,7 @@
     <option_html5_advertising_type>Supersonic Ads</option_html5_advertising_type>
     <option_html5_allow_fullscreen>True</option_html5_allow_fullscreen>
     <option_html5_alwaysreload>False</option_html5_alwaysreload>
-    <option_html5_browser_title>Created with GameMaker: Studio</option_html5_browser_title>
+    <option_html5_browser_title>Love is on the Air</option_html5_browser_title>
     <option_html5_centergame>False</option_html5_centergame>
     <option_html5_facebook_app_display_name></option_html5_facebook_app_display_name>
     <option_html5_facebook_appid></option_html5_facebook_appid>
@@ -421,7 +421,7 @@
     <option_shortcircuit>True</option_shortcircuit>
     <option_showcursor>True</option_showcursor>
     <option_showprogress>1</option_showprogress>
-    <option_sizeable>False</option_sizeable>
+    <option_sizeable>True</option_sizeable>
     <option_stayontop>false</option_stayontop>
     <option_sync_vertex>0</option_sync_vertex>
     <option_textureGroup0_border>2</option_textureGroup0_border>

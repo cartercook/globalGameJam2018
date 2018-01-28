@@ -4,7 +4,13 @@
     <Config>Configs\Default</Config>
   </Configs>
   <NewExtensions/>
-  <sounds name="sound"/>
+  <sounds name="sound">
+    <sound>sound\snd_carcas</sound>
+    <sound>sound\snd_michael</sound>
+    <sound>sound\snd_panchetta</sound>
+    <sound>sound\snd_reznar</sound>
+    <sound>sound\snd_robot</sound>
+  </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_btn_play</sprite>
     <sprite>sprites\spr_btn_heart</sprite>
@@ -17,6 +23,14 @@
     <sprite>sprites\spr_logo</sprite>
     <sprite>sprites\spr_popup</sprite>
     <sprite>sprites\spr_selector</sprite>
+    <sprites name="waveforms">
+      <sprite>sprites\spr_carcas_wav</sprite>
+      <sprite>sprites\spr_michael_wav</sprite>
+      <sprite>sprites\spr_panchetta_wav</sprite>
+      <sprite>sprites\spr_reznar_wav</sprite>
+      <sprite>sprites\spr_robot_wav</sprite>
+      <sprite>sprites\spr_wota_wav</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_starbg</background>
@@ -25,18 +39,41 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\draw_wave.gml</script>
+    <script>scripts\scr_show_popup.gml</script>
+    <script>scripts\scr_play.gml</script>
+    <script>scripts\scr_set_track.gml</script>
   </scripts>
   <fonts name="fonts">
-    <font>fonts\fnt_pixel</font>
+    <font>fonts\fnt_pixel_x32</font>
+    <font>fonts\fnt_pixel_x48</font>
     <font>fonts\fnt_shumi</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_btn_play</object>
+    <object>objects\obj_btn_heart</object>
+    <object>objects\obj_btn_pink</object>
+    <object>objects\obj_btn_start_1</object>
+    <object>objects\obj_btn_start_2</object>
+    <object>objects\obj_btn_x</object>
+    <object>objects\obj_ico_mail</object>
+    <object>objects\obj_light</object>
     <object>objects\obj_logo</object>
+    <object>objects\obj_popup</object>
+    <object>objects\obj_selector</object>
+    <object>objects\obj_ticker</object>
+    <objects name="waveforms">
+      <object>objects\obj_carcas_wav</object>
+      <object>objects\obj_michael_wav</object>
+      <object>objects\obj_panchetta_wav</object>
+      <object>objects\obj_reznar_wav</object>
+      <object>objects\obj_robot_wav</object>
+      <object>objects\obj_wota_wav</object>
+    </objects>
   </objects>
   <rooms name="rooms">
-    <room>rooms\screen_startmenu</room>
     <room>rooms\screen_controlpanel</room>
     <room>rooms\screen_instructions</room>
+    <room>rooms\screen_startmenu</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

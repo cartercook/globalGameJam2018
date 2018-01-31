@@ -50,30 +50,29 @@ playing = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// mouseover
-if position_meeting(mouse_x, mouse_y, self) {
-    // toggle playing
-    if mouse_check_button_pressed(mb_left) {
+            <string>if global.scene == 2 {
+    // mouseover
+    if position_meeting(mouse_x, mouse_y, self) {
+        // toggle playing
+        if mouse_check_button_pressed(mb_left) {
+            playing = !playing
+            scr_set_playing(playing)
+            audio_play_sound(snd_click, 9, false)
+        }
+    
+        // hover colour
+        image_index = 1 // pink
+    } else {
+        // normal colour
         if playing {
-            audio_pause_all()
-            playing = false
+            image_index = 1 //pink
         } else {
-            audio_resume_all()
-            playing = true
+            image_index = 0 //yellow
         }
     }
-
-    // hover colour
-    image_index = 1 // pink
 } else {
-    // normal colour
-    if playing {
-        image_index = 1 //pink
-    } else {
-        image_index = 0 //yellow
-    }
+    image_index = 2 // grey
 }
-
 </string>
           </argument>
         </arguments>

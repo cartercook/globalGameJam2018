@@ -62,6 +62,12 @@
     <instance objName="obj_robot_wav" x="645" y="498" name="inst_382859FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_wota_wav" x="645" y="553" name="inst_E5775423" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_selector" x="642" y="305" name="inst_B02E190C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_ico_mail" x="645" y="393" name="inst_A36FECB8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_popup_2" x="640" y="360" name="inst_F787F09D" locked="0" code="depth = -1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_btn_x_2" x="1001" y="105" name="inst_52578C47" locked="0" code="depth = -2&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_ico_mail_2" x="640" y="192" name="inst_EA001593" locked="0" code="depth = -2&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_btn_pink_2" x="537" y="508" name="inst_F2DF7B10" locked="0" code="" scaleX="0.699999988079071" scaleY="0.699999988079071" colour="4294967295" rotation="0"/>
+    <instance objName="obj_btn_pink_3" x="752" y="508" name="inst_A46F0762" locked="0" code="" scaleX="0.699999988079071" scaleY="0.699999988079071" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

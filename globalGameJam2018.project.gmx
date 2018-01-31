@@ -11,6 +11,14 @@
     <sound>sound\snd_reznar</sound>
     <sound>sound\snd_robot</sound>
     <sound>sound\snd_wota</sound>
+    <sound>sound\snd_host_intro</sound>
+    <sound>sound\snd_host_matchmaking</sound>
+    <sound>sound\snd_host_commercial</sound>
+    <sound>sound\snd_theme</sound>
+    <sound>sound\snd_click</sound>
+    <sound>sound\snd_wavy</sound>
+    <sound>sound\snd_wum</sound>
+    <sound>sound\snd_cancel</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_btn_play</sprite>
@@ -24,6 +32,7 @@
     <sprite>sprites\spr_logo</sprite>
     <sprite>sprites\spr_popup</sprite>
     <sprite>sprites\spr_selector</sprite>
+    <sprite>sprites\spr_lock_in</sprite>
     <sprites name="waveforms">
       <sprite>sprites\spr_carcas_wav</sprite>
       <sprite>sprites\spr_michael_wav</sprite>
@@ -41,8 +50,11 @@
   <scripts name="scripts">
     <script>scripts\draw_wave.gml</script>
     <script>scripts\scr_show_popup.gml</script>
-    <script>scripts\scr_play.gml</script>
+    <script>scripts\scr_show_popup_2.gml</script>
+    <script>scripts\scr_set_playing.gml</script>
     <script>scripts\scr_set_track.gml</script>
+    <script>scripts\scr_reset.gml</script>
+    <script>scripts\scr_generate_message.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_pixel_x32</font>
@@ -53,13 +65,18 @@
     <object>objects\obj_btn_play</object>
     <object>objects\obj_btn_heart</object>
     <object>objects\obj_btn_pink</object>
+    <object>objects\obj_btn_pink_2</object>
+    <object>objects\obj_btn_pink_3</object>
     <object>objects\obj_btn_start_1</object>
     <object>objects\obj_btn_start_2</object>
     <object>objects\obj_btn_x</object>
+    <object>objects\obj_btn_x_2</object>
     <object>objects\obj_ico_mail</object>
+    <object>objects\obj_ico_mail_2</object>
     <object>objects\obj_light</object>
     <object>objects\obj_logo</object>
     <object>objects\obj_popup</object>
+    <object>objects\obj_popup_2</object>
     <object>objects\obj_selector</object>
     <object>objects\obj_ticker</object>
     <objects name="waveforms">
@@ -70,11 +87,13 @@
       <object>objects\obj_robot_wav</object>
       <object>objects\obj_wota_wav</object>
     </objects>
+    <object>objects\obj_lock_in</object>
+    <object>objects\obj_setup</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\screen_controlpanel</room>
+    <room>rooms\screen_setup</room>
     <room>rooms\screen_instructions</room>
-    <room>rooms\screen_startmenu</room>
+    <room>rooms\screen_controlpanel</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>

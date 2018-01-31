@@ -31,25 +31,28 @@ global.track = 0
 
 // full volume
 global.tracks[0] = audio_play_sound(snd_carcas, 10, false)
+audio_pause_sound(global.tracks[0])
 
 // silent
 global.tracks[1] = audio_play_sound(snd_michael, 10, false)
 audio_sound_gain(global.tracks[1], 0, 0)
+audio_pause_sound(global.tracks[1])
 
 global.tracks[2] = audio_play_sound(snd_panchetta, 10, false)
 audio_sound_gain(global.tracks[2], 0, 0)
+audio_pause_sound(global.tracks[2])
 
 global.tracks[3] = audio_play_sound(snd_reznar, 10, false)
 audio_sound_gain(global.tracks[3], 0, 0)
+audio_pause_sound(global.tracks[3])
 
 global.tracks[4] = audio_play_sound(snd_robot, 10, false)
 audio_sound_gain(global.tracks[4], 0, 0)
+audio_pause_sound(global.tracks[4])
 
 global.tracks[5] = audio_play_sound(snd_wota, 10, false)
 audio_sound_gain(global.tracks[5], 0, 0)
-
-// pause everything (wait for play button)
-audio_pause_all()
+audio_pause_sound(global.tracks[5])
 
 //references to sound clip objects
 global.track_obj[0] = obj_carcas_wav
@@ -58,6 +61,14 @@ global.track_obj[2] = obj_panchetta_wav
 global.track_obj[3] = obj_reznar_wav
 global.track_obj[4] = obj_robot_wav
 global.track_obj[5] = obj_wota_wav
+
+//locked in position
+global.lock[0] = noone
+global.lock[1] = noone
+global.lock[2] = noone
+global.lock[3] = noone
+global.lock[4] = noone
+global.lock[5] = noone
 </string>
           </argument>
         </arguments>
@@ -87,6 +98,24 @@ global.track_obj[5] = obj_wota_wav
 }
 
 y = global.track_obj[global.track].y
+
+// after cutscene
+if global.scene &gt; 1 {
+    if keyboard_check_pressed(vk_enter) or keyboard_check_pressed(vk_space) {
+        if global.lock[global.track] == noone {
+            // create lock
+            if instance_number(obj_lock_in) &lt; 2 {
+                global.lock[global.track] = instance_create(x, y, obj_lock_in)
+                global.lock[global.track].number = global.track
+            }
+        } else {
+            // remove lock
+            instance_destroy(global.lock[global.track])
+            global.lock[global.track] = noone
+        }
+    }
+}
+
 </string>
           </argument>
         </arguments>

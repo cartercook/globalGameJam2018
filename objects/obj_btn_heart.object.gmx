@@ -48,21 +48,29 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>// mouseover
-if position_meeting(mouse_x, mouse_y, self) {
-    // toggle playing
-    if mouse_check_button_pressed(mb_left) {
+            <string>//TODO: uncomment!!
 
-    }
-
-    // hover colour
-    image_index = 1 // pink
+// finish tutorial and at least 2 lock-ins
+if global.scene == 1 or global.scene == 5 or instance_number(obj_lock_in) != 2 {
+    image_index = 2 // grey
 } else {
-    // normal colour
-    image_index = 0 //yellow
-
+    // mouseover
+    if position_meeting(mouse_x, mouse_y, self) {
+        // toggle playing
+        if mouse_check_button_pressed(mb_left) {
+            audio_stop_all();
+            audio_play_sound(snd_wavy, 9, false)
+            global.scene = 5 // email scene
+            //TODO: trigger ending!
+        }
+    
+        // hover colour
+        image_index = 1 // pink
+    } else {
+        // normal colour
+        image_index = 0 //yellow   
+    }
 }
-
 </string>
           </argument>
         </arguments>

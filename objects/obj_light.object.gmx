@@ -26,7 +26,121 @@
           <argument>
             <kind>1</kind>
             <string>image_speed = 0
-image_index = 1 // green
+image_index = 0 // yellow
+
+
+
+//TODO: reset this
+//global.first_run = false
+if global.first_run {
+    global.scene = 1 //start on cutsene #1
+    global.isCutscene = true
+    global.intro_dialogue = audio_play_sound(snd_host_intro, 11, false)
+} else {
+    global.scene = 2 //skip cutscene
+    global.isCutscene = false
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>scr_show_popup_2(true)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>switch (global.scene) {
+// intro dialogue
+case 1:
+    // wait for end of audio clip
+    if !audio_is_playing(global.intro_dialogue) {
+        // end cutscene
+        global.scene = 2
+        global.isCutscene = false
+    }
+    break
+//contestant clips
+case 2:
+    //wait for end of audio clip
+    if !audio_is_playing(global.tracks[0]) {
+        if global.first_run {
+            // start cutscene
+            global.scene = 3
+            global.isCutscene = true
+        
+            matchmaking_dialogue = audio_play_sound(snd_host_matchmaking, 11, false)
+        } else {
+            // skip cutscene
+            global.scene = 4
+        }
+    }
+    break
+// matchmaking dialogue
+case 3:
+    // wait for end of audio clip
+    if !audio_is_playing(matchmaking_dialogue) {
+        // end cutscene
+        global.scene = 4
+        global.isCutscene = false
+    }
+    break
+// you got mail
+case 5:
+    // hide UI
+    for (var i = 0; i &lt;= 5; i++) {
+        global.track_obj[i].visible = false
+    }
+    with obj_lock_in {
+        visible = false
+    }
+    obj_ticker.visible = false
+    obj_selector.visible = false
+    
+    //show mail alert
+    obj_ico_mail.visible = true
+    alarm[0] = 3*room_speed //wait 2 seconds then display message
+    
+    global.scene = 6
+    
+    break
+}
 </string>
           </argument>
         </arguments>
@@ -54,17 +168,39 @@ image_index = 1 // green
 draw_set_font(fnt_pixel_x48)
 draw_set_halign(fa_center)
 draw_set_valign(fa_center)
-draw_set_colour(c_fuchsia)
+draw_set_colour(make_colour_rgb(255, 109, 109))
 
-// draw remaining time
-seconds = audio_sound_length(global.tracks[0]) - audio_sound_get_track_position(global.tracks[0])
-minutes = floor(seconds/60)
-seconds -= minutes * 60
-milliseconds = floor((seconds - floor(seconds)) * 100)
-seconds = floor(seconds)
+// cutscene or picking matches
 
-draw_text(x, y, string(minutes) + ':' + string_format(seconds, 2, 0) + ':' + string_format(milliseconds, 2, 0))
+if global.scene &gt; 2 {
+    image_index = 2 // red
+    draw_text(x, y, "00:00:00")
+} else if global.isCutscene {
+    image_index = 0
+    draw_text(x, y, "STANDBY")
+} else {
+    image_index = 1
+    // draw remaining time
+    var seconds = audio_sound_length(global.tracks[0]) - audio_sound_get_track_position(global.tracks[0])
+    var minutes = floor(seconds/60);
+    seconds -= minutes * 60
+    var millis = floor((seconds - floor(seconds)) * 100)
+    seconds = floor(seconds)
+    
+    var str_millis = string(millis)
+    if millis &lt;= 9 {
+        str_millis = '0'+str_millis
+    }
+    
+    var str_seconds = string(seconds)
+    if seconds &lt;= 9 {
+        str_seconds = '0'+str_seconds
+    }
+    
+    draw_text(x, y, string(minutes) + ':' + str_seconds + ':' + str_millis)
+}
 
+draw_set_colour(c_white)
 </string>
           </argument>
         </arguments>

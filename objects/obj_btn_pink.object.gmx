@@ -51,6 +51,7 @@ depth = -1
             <kind>1</kind>
             <string>// mouse click
 if mouse_check_button_pressed(mb_left) and position_meeting(mouse_x, mouse_y, self) {
+    audio_play_sound(snd_cancel, 9, false)
     scr_show_popup(false)
 }
 

@@ -55,6 +55,7 @@
     <script>scripts\scr_set_track.gml</script>
     <script>scripts\scr_reset.gml</script>
     <script>scripts\scr_generate_message.gml</script>
+    <script>scripts\scr_draw_number.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\fnt_pixel_x32</font>

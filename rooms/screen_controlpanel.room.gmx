@@ -56,11 +56,11 @@
     <instance objName="obj_light" x="641" y="112" name="inst_B3775757" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ticker" x="464" y="270" name="inst_270F0A75" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_carcas_wav" x="643" y="305" name="inst_177A8D5F" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_michael_wav" x="642" y="346" name="inst_D4AF86BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_panchetta_wav" x="642" y="398" name="inst_8793D8DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_reznar_wav" x="642" y="446" name="inst_0E9272E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_robot_wav" x="645" y="498" name="inst_382859FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_wota_wav" x="645" y="553" name="inst_E5775423" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_michael_wav" x="641" y="352" name="inst_D4AF86BD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_panchetta_wav" x="642" y="401" name="inst_8793D8DB" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_reznar_wav" x="642" y="449" name="inst_0E9272E5" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_robot_wav" x="644" y="505" name="inst_382859FD" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_wota_wav" x="644" y="557" name="inst_E5775423" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_selector" x="642" y="305" name="inst_B02E190C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_ico_mail" x="645" y="393" name="inst_A36FECB8" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="obj_popup_2" x="640" y="360" name="inst_F787F09D" locked="0" code="depth = -1&#xA;" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
